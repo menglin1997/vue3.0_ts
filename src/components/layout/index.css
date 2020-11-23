@@ -1,0 +1,14 @@
+
+h1 {
+    color: red;
+}
+.layout-content {
+    height: calc(100vh - 100px);
+    display: flex;
+    
+}
+.main {
+    background-color:pink;
+    width: calc(100vw - 180px);
+    height: calc(100vh - 46px);
+}

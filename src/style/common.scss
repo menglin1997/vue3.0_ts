@@ -1,0 +1,166 @@
+// 默认字体大小
+/* 
+18px(特殊)
+16px
+正常：14px
+12px
+ 
+ */
+ $fs-text-xs: 12px; // 最小字体12px
+ $fs-text-default: 14px; // 一般14px
+ $fs-text-lg: 16px; // 大字体16px
+ $fs-text-xl: 18px; // 更大字体18px
+.dz-fs-xs {
+  font-size: $fs-text-xs;
+}
+.dz-fs-default {
+  font-size: $fs-text-default;
+}
+.dz-fs-lg {
+  font-size: $fs-text-lg;
+}
+.dz-fs-xl {
+  font-size: $fs-text-xl;
+}
+
+page {
+	font-size: $fs-text-default;
+	font-family: 'PingFang SC','思源黑体', 'Segoe UI', 'Lucida Grande', Helvetica, Arial, 'Microsoft YaHei';
+	color: #3a3a3a;
+}
+.blue_c {
+	color: #3988FA;
+}
+.border-bottom {
+	 border-bottom: 1px solid #E2E4E6;
+}
+page,
+view,
+text,
+image,
+scroll-view,
+swiper,
+swiper-item {
+	box-sizing: border-box;
+}
+/* 
+18px(特殊)
+16px
+正常：14px
+12px
+ 
+ */
+.am-clear-native-style {
+	/* 清除原生默认样式 */
+	background: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+	&:after {
+		border: none;
+	}
+}
+// 超出出现省略号  param {Number}  $value - 行数，默认2 
+@mixin amOverLineClamp($value: 2) {
+	text-overflow: -o-ellipsis-lastline;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $value;
+	line-clamp: $value;
+	-webkit-box-orient: vertical;
+}
+// 超出两行出现省略号
+.am-line-clamp-two {
+	@include amOverLineClamp();
+}
+
+.am-text-eill {
+	/*超出省略号*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.am-text-break {
+	/*换行*/
+	white-space: normal;
+	word-break: break-all;
+}
+
+.am-align-center {
+	/*文本居中*/
+	text-align: center;
+}
+
+.am-block {
+  display: block;
+}
+
+.am-inline {
+  display: inline;
+}
+
+.am-inline-block {
+  display: inline-block;
+}
+
+
+// 默认flex布局 $justify-content 
+@mixin fsFlex($justify-content: space-between,$direction:row) {
+	display: flex;
+	align-items: center;
+	flex-direction: $direction;
+	flex-wrap: wrap;
+	justify-content: $justify-content;
+}
+// 默认flex布局
+.fs-flex-default {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+// 默认flex布局-不居中对齐
+.fs-flex-default-nocenter {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+// 默认flex布局
+.fs-flex-col {
+	@include fsFlex();
+}
+
+// 横向居中
+.fs-flex-row-center {
+	@include fsFlex(center);
+}
+
+.fs-flex-row-center {
+	@include fsFlex(center,column);
+}
+// 纵向居中
+.fs-flex-column-center {
+	@include fsFlex(center,column);
+}
+// 纵向两边
+.fs-flex-row-between {
+	@include fsFlex(space-between,column);
+}
+// 纵向两边
+.fs-flex-column-between {
+	@include fsFlex(space-between,column);
+}
+// 横向两边
+.fs-flex-row {
+	@include fsFlex(space-between,row);
+}
+
+// 横向从右边开始
+.fs-flex-row-right {
+	@include fsFlex(space-between,row-reverse);
+}
+
